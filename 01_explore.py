@@ -71,7 +71,7 @@ df = spark \
   .option("sep", ",") \
   .option("header", True) \
   .schema(schema) \
-  .load("jkim/creditcard/")
+  .load("creditcard/")
 
 df.describe("Time","Amount","Class").show()
 
@@ -153,7 +153,7 @@ tmp_plot2(v_list)
 feature_selected = ["V1","V2","V3","V4","V9","V10","V11","V12","V14","V16","V17","V18","V19"]
 
 # Save the data for next phase, Machine Learning
-df2.write.parquet("jkim/ccfraud/exploredata", mode="overwrite")
+df2.write.parquet("creditcard/exploredata", mode="overwrite")
 
 # ## Cleanup
 # Stop the SparkSession:

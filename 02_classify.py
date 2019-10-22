@@ -16,7 +16,7 @@ spark = SparkSession.builder.master("local").appName("jkim_classify").getOrCreat
 
 
 # Read the explored data from HDFS:
-df = spark.read.parquet("jkim/ccfraud/exploredata/")
+df = spark.read.parquet("creditcard/exploredata/")
 
 # Now we manually select our features and label:
 # Features selected
@@ -35,7 +35,7 @@ df_assembled.head(5)
 # **Note:** `features` is stored in sparse format.
 
 # Save data for subsequent modules:
-df_assembled.write.parquet("jkim/ccfraud/classifydata", mode="overwrite")
+df_assembled.write.parquet("creditcard/classifydata", mode="overwrite")
 
 
 # ## Create train and test datasets for machine learning (classification).

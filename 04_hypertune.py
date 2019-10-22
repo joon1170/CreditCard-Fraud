@@ -17,7 +17,7 @@ spark = SparkSession.builder.master("local").appName("jkim_hypertune").getOrCrea
 # ## Preprocess the modeling data
 
 # Read the explored data from HDFS:
-df = spark.read.parquet("jkim/ccfraud/exploredata/")
+df = spark.read.parquet("creditcard/exploredata/")
 
 # Now we manually select our features and label:
 # Features selected
