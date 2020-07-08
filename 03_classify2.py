@@ -18,7 +18,7 @@ spark = SparkSession.builder.master("local").appName("jkim_classify2").getOrCrea
 # ## Preprocess the modeling data
 
 # Read the explored data from HDFS:
-df = spark.read.parquet("creditcard/exploredata/")
+df = spark.read.parquet("s3a://jkim-appsdata/ml/creditcard/exploredata/")
 
 # Now we manually select our features and label:
 # Features selected
